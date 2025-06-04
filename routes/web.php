@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\TypesController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     Route::get('/products/new', [ProductsController::class, 'create']);
     Route::post('/products/new', [ProductsController::class, 'store']);
     Route::get('/products', [ProductsController::class, 'index'])->name('products');
@@ -29,7 +31,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/types', [TypesController::class, 'index'])->name('types');
     Route::get('/types/update/{id}', [TypesController::class, 'edit']);
     Route::post('/types/update/', [TypesController::class, 'update']);
-    Route::get('/types/delete/{id}', [TypesController::class, 'destroy']);
+    Route::delete('/types/delete/{id}', [TypesController::class, 'destroy']);
+
+    Route::get('/suppliers/new', [SuppliersController::class, 'create']);
+    Route::post('/suppliers/new', [SuppliersController::class, 'store']);
+    Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
+    Route::get('/suppliers/update/{id}', [SuppliersController::class, 'edit']);
+    Route::post('/suppliers/update/', [SuppliersController::class, 'update']);
+    Route::delete('/suppliers/delete/{id}', [SuppliersController::class, 'destroy']);
+
+
 });
 
 require __DIR__ . '/auth.php';
