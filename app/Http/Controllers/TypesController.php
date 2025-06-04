@@ -8,10 +8,17 @@ use Illuminate\Http\Request;
 
 class TypesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $filter = $request->input('search');
+        if ($filter) {
+            $types = Type::where('name', 'like', "%$filter%")->get();
+        } else {
+            $types = Type::orderBy('name', 'asc')->get();
+        }
         return view('types.index', [
-            'types' => Type::all()
+            'types' => $types,
+            'filter' => $filter
         ]);
     }
 
