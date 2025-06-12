@@ -1,14 +1,15 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\TypesController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('type/{id}', [HomeController::class, 'filterByType'])->name('products.byType');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,8 +40,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/suppliers/update/{id}', [SuppliersController::class, 'edit']);
     Route::post('/suppliers/update/', [SuppliersController::class, 'update']);
     Route::delete('/suppliers/delete/{id}', [SuppliersController::class, 'destroy']);
-
-
 });
 
 require __DIR__ . '/auth.php';
