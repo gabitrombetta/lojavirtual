@@ -1,14 +1,13 @@
 # Loja Virtual - Projeto Laravel
 
 Este é um projeto desenvolvido como parte de um trabalho acadêmico para a disciplina Tópicos em Desenvolvimento
-de Software I, mninistrada pelo professor Clayton Magalhães, no curso de ADS da Universidade de Passo Fundo. A aplicação simula uma **loja virtual**, onde é possível visualizar produtos cadastrados com seus respectivos tipos, preços e quantidades disponíveis.
+de Software I, mninistrada pelo professor Clayton Magalhães, no curso de Análise e Desenvolvimento de Sistemas da Universidade de Passo Fundo. A aplicação simula uma **loja virtual**, onde é possível visualizar produtos cadastrados com seus respectivos tipos, preços e quantidades disponíveis.
 
 ## ✅ Funcionalidades
 
 - Tela inicial com listagem de produtos disponíveis
 - Botões que filtram os produtos por tipo
 - Sistema de login e registro usando Laravel Breeze
-- Exibição dos dados de forma responsiva e agradável
 
 ## 💻 Tecnologias utilizadas
 
